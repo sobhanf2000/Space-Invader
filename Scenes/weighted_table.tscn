@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ciy3oko5fbcmr"]
+
+[ext_resource type="Script" uid="uid://dxioyfx8m5xd2" path="res://Scenes/weighted_table.gd" id="1_yukkp"]
+
+[node name="Weighted_Table_component" type="Node" unique_id=1264071127]
+script = ExtResource("1_yukkp")

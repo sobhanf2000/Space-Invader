@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cxn87hsd44cc5"]
+
+[ext_resource type="Script" uid="uid://b1hn0aupdvwwe" path="res://Scenes/game_objects/planets/planets.gd" id="1_fxh64"]
+[ext_resource type="Texture2D" uid="uid://bensnd8fi58y7" path="res://Assets/PNGs/planets/City1.png" id="2_kkgbr"]
+[ext_resource type="Texture2D" uid="uid://bxy13ahv1iqpt" path="res://Assets/PNGs/planets/Ice1.png" id="3_v0fv1"]
+[ext_resource type="Texture2D" uid="uid://oi800673pegd" path="res://Assets/PNGs/planets/Lava1.png" id="4_r1byc"]
+[ext_resource type="Texture2D" uid="uid://ch36g4u08iekm" path="res://Assets/PNGs/planets/Terran1.png" id="5_dkj80"]
+
+[node name="Planets" type="Sprite2D" unique_id=1303006342]
+z_index = -1
+script = ExtResource("1_fxh64")
+planets_pngs = Array[CompressedTexture2D]([ExtResource("2_kkgbr"), ExtResource("3_v0fv1"), ExtResource("4_r1byc"), ExtResource("5_dkj80")])

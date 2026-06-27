@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b6oc8pm33idyw"]
+
+[ext_resource type="Script" uid="uid://pic0tvif5q6i" path="res://Scenes/components/vial_drop_component/vial_drop_component.gd" id="1_30t18"]
+[ext_resource type="PackedScene" uid="uid://cemvhjvy4s1eq" path="res://Scenes/game_objects/exp_vial/exp_vial.tscn" id="2_sdoiw"]
+
+[node name="Vial_drop_Component" type="Node" unique_id=1109720898]
+script = ExtResource("1_30t18")
+drop_rate = 0.4
+exp_vial_origin = ExtResource("2_sdoiw")

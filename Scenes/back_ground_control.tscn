@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://7gq1fejxjf27"]
+
+[ext_resource type="Texture2D" uid="uid://4b8b4lbxmpxa" path="res://Assets/PNGs/BackGrounds/Starfield_05-1024x1024.png" id="1_8y03p"]
+
+[node name="BackGroundControl" type="Control" unique_id=1307623818]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1667808852]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_8y03p")

@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dyv8esvi6sey7"]
+
+[ext_resource type="Script" uid="uid://b6wkijh5ux6x1" path="res://Scenes/game_objects/main_menu/main_menu.gd" id="1_28flt"]
+[ext_resource type="VideoStream" uid="uid://dofxrokc0lljj" path="res://moviefile/test.ogv" id="2_48xlc"]
+
+[node name="Main_Menu" type="CanvasLayer" unique_id=1526870895]
+script = ExtResource("1_28flt")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=466509835]
+offset_right = 540.0
+offset_bottom = 1200.0
+stream = ExtResource("2_48xlc")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Main_Menu_list" type="CanvasLayer" parent="." unique_id=1819815492]
+
+[node name="GameTitle_Label" type="Label" parent="Main_Menu_list" unique_id=1705308629]
+offset_left = 79.0
+offset_top = 180.0
+offset_right = 449.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Space Invader"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Button" type="Button" parent="Main_Menu_list" unique_id=1453742451]
+offset_left = 147.0
+offset_top = 545.0
+offset_right = 365.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="Exit_Button" type="Button" parent="Main_Menu_list" unique_id=762658918]
+offset_left = 147.0
+offset_top = 670.0
+offset_right = 365.0
+offset_bottom = 755.0
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+
+[node name="Level_Menu" type="CanvasLayer" parent="." unique_id=1817155857]
+visible = false
+
+[node name="GameTitle_Label" type="Label" parent="Level_Menu" unique_id=2079142884]
+offset_left = 79.0
+offset_top = 180.0
+offset_right = 449.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Space Invader"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Infinity_Button" type="Button" parent="Level_Menu" unique_id=1069589326]
+offset_left = 151.0
+offset_top = 340.0
+offset_right = 369.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 32
+text = "Infinity"
+
+[node name="Play_Level_Button_1" type="Button" parent="Level_Menu" unique_id=1431295095]
+offset_left = 13.0
+offset_top = 471.0
+offset_right = 231.0
+offset_bottom = 556.0
+theme_override_font_sizes/font_size = 32
+text = "Level 1"
+
+[node name="Play_Level_Button_2" type="Button" parent="Level_Menu" unique_id=2028804449]
+offset_left = 311.0
+offset_top = 471.0
+offset_right = 529.0
+offset_bottom = 556.0
+theme_override_font_sizes/font_size = 32
+text = "Level 2"
+
+[node name="Play_Level_Button_3" type="Button" parent="Level_Menu" unique_id=1325327908]
+offset_left = 13.0
+offset_top = 600.0
+offset_right = 231.0
+offset_bottom = 685.0
+theme_override_font_sizes/font_size = 32
+text = "Level 3"
+
+[node name="Play_Level_Button_4" type="Button" parent="Level_Menu" unique_id=1055708221]
+offset_left = 311.0
+offset_top = 600.0
+offset_right = 529.0
+offset_bottom = 685.0
+theme_override_font_sizes/font_size = 32
+text = "Level 4"
+
+[node name="Back_To_Main_Button" type="Button" parent="Level_Menu" unique_id=1766610730]
+offset_left = 147.0
+offset_top = 745.0
+offset_right = 365.0
+offset_bottom = 830.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="Version_Label" type="Label" parent="." unique_id=215834506]
+offset_right = 138.0
+offset_bottom = 46.0
+text = "Version: 0.7 Beta"

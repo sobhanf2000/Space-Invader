@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b3fj8mvsrajlw"]
+
+[ext_resource type="Script" uid="uid://clhwqdag87sua" path="res://Scenes/components/fire_controller_component/fire_controller_component.gd" id="1_xmobm"]
+
+[node name="Fire_Controller_Component" type="Node" unique_id=899284589]
+script = ExtResource("1_xmobm")
+is_active = true

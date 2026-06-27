@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://x2jkery5fsp2"]
+
+[ext_resource type="Texture2D" uid="uid://ci6ormyifd1oi" path="res://Assets/icon.svg" id="1_57mqm"]
+[ext_resource type="Script" uid="uid://dh501nk5s0w0x" path="res://Scenes/bullets/enemy_bullets/purple_bullet/purple_bullet.gd" id="2_57mqm"]
+[ext_resource type="PackedScene" uid="uid://guogcam4nkjo" path="res://Scenes/bullets/player_bullets/bullet_particles/bullet_particles.tscn" id="3_ftydy"]
+[ext_resource type="PackedScene" uid="uid://bua5q7c327oj" path="res://Scenes/components/hit_box_component/hit_box_component.tscn" id="4_xnvou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjght"]
+size = Vector2(2, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oduel"]
+size = Vector2(2, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnvou"]
+size = Vector2(1.5, 5.5)
+
+[node name="Purple_Bullet" type="StaticBody2D" unique_id=145672786]
+scale = Vector2(4, 4)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_57mqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=425072425]
+modulate = Color(1.2127409, 0, 18.892157, 0.9647059)
+scale = Vector2(0.01, 0.05)
+texture = ExtResource("1_57mqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353947498]
+scale = Vector2(0.665, 0.82)
+shape = SubResource("RectangleShape2D_xjght")
+disabled = true
+
+[node name="Bullet_Particles" parent="." unique_id=2003337689 instance=ExtResource("3_ftydy")]
+
+[node name="HitBoxComponent" parent="." unique_id=1214335948 instance=ExtResource("4_xnvou")]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" unique_id=1542054838]
+scale = Vector2(0.73, 1)
+shape = SubResource("RectangleShape2D_oduel")
+
+[node name="Enemy_Detector" type="Area2D" parent="." unique_id=1711942394]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Detector" unique_id=1043170004]
+shape = SubResource("RectangleShape2D_xnvou")
+
+[node name="Timer" type="Timer" parent="." unique_id=1882408603]
+wait_time = 10.0
+autostart = true

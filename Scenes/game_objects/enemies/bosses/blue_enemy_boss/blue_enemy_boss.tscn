@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://fnwrk7c18aiw"]
+
+[ext_resource type="Script" uid="uid://cmdai0emtpht5" path="res://Scenes/game_objects/enemies/bosses/basic_boss/basic_enemy_boss.gd" id="1_vdllv"]
+[ext_resource type="PackedScene" uid="uid://b5xk7d3cvjrns" path="res://Scenes/components/health_component/health_component.tscn" id="2_es5ma"]
+[ext_resource type="PackedScene" uid="uid://cd0l8mnxgps26" path="res://Scenes/components/fire_controller_v2_component/fire_controller_v2_component.tscn" id="3_es5ma"]
+[ext_resource type="PackedScene" uid="uid://cx4gluaaqfsrk" path="res://Scenes/bullets/enemy_bullets/blue_enemy_bullet/blue_enemy_bullet.tscn" id="4_es5ma"]
+[ext_resource type="Texture2D" uid="uid://btmoc3bpfllyj" path="res://Assets/PNGs/enemies/cute-blue-space-invader-monster-game-enemy-pixel-art-style-white-cute-blue-space-invader-monster-game-enemy-pixel-art-199809541-removebg-preview.png" id="5_x0ygs"]
+[ext_resource type="PackedScene" uid="uid://nfmt6urqq7i5" path="res://Scenes/components/HurtBoxComponent/hurt_box_component.tscn" id="6_se6uy"]
+[ext_resource type="PackedScene" uid="uid://bua5q7c327oj" path="res://Scenes/components/hit_box_component/hit_box_component.tscn" id="7_es5ma"]
+[ext_resource type="PackedScene" uid="uid://dibay4tlc1hyx" path="res://Scenes/components/health_progress_bar_component/health_progress_bar_component.tscn" id="7_wxx0s"]
+
+[sub_resource type="Shader" id="Shader_0cj0u"]
+code = "shader_type canvas_item;
+
+uniform float hit_flash : hint_range(0.0, 1.0) = 0.0;
+uniform vec4 flash_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec3 final_color = mix(tex.rgb, flash_color.rgb, hit_flash);
+
+    COLOR = vec4(final_color, tex.a);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ef2m6"]
+shader = SubResource("Shader_0cj0u")
+shader_parameter/hit_flash = 0.0
+shader_parameter/flash_color = Color(0.09033809, 0.25827175, 0.45262197, 0.7019608)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tx0hn"]
+radius = 164.40022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
+radius = 176.30708
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewcyi"]
+radius = 176.30708
+
+[node name="Blue_Enemy_Boss" type="Node2D" unique_id=499079467 groups=["enemy"]]
+script = ExtResource("1_vdllv")
+
+[node name="Health_Component" parent="." unique_id=770925081 instance=ExtResource("2_es5ma")]
+health = 500
+is_active = false
+
+[node name="Fire_Controller_v2_Component" parent="." unique_id=899284589 node_paths=PackedStringArray("barrel") instance=ExtResource("3_es5ma")]
+bullet_origin = ExtResource("4_es5ma")
+random_shoot_cooldowns = Vector2(3, 5)
+barrel = [NodePath("../Barrel"), NodePath("../Barrel2"), NodePath("../Barrel3"), NodePath("../Barrel4"), NodePath("../Barrel5"), NodePath("../Barrel6"), NodePath("../Barrel7"), NodePath("../Barrel8"), NodePath("../Barrel9"), NodePath("../Barrel10")]
+fire_types = 1
+
+[node name="Barrel" type="Marker2D" parent="." unique_id=1400295908]
+position = Vector2(-146, 135.71428)
+rotation = -0.2617994
+
+[node name="Barrel2" type="Marker2D" parent="." unique_id=927241750]
+position = Vector2(-77, 135.71428)
+rotation = 0.2617994
+
+[node name="Barrel3" type="Marker2D" parent="." unique_id=2004367774]
+position = Vector2(-29, 135.71428)
+rotation = -0.2617994
+
+[node name="Barrel4" type="Marker2D" parent="." unique_id=926914530]
+position = Vector2(29, 135.71428)
+rotation = 0.2617994
+
+[node name="Barrel5" type="Marker2D" parent="." unique_id=232605428]
+position = Vector2(86, 136)
+rotation = -0.2617994
+
+[node name="Barrel6" type="Marker2D" parent="." unique_id=1658547324]
+position = Vector2(142, 135.71428)
+rotation = 0.2617994
+
+[node name="Barrel7" type="Marker2D" parent="." unique_id=717355416]
+position = Vector2(-114.000015, 162.24745)
+rotation = 0.2617994
+
+[node name="Barrel8" type="Marker2D" parent="." unique_id=427855680]
+position = Vector2(-43, 162)
+
+[node name="Barrel9" type="Marker2D" parent="." unique_id=23273861]
+position = Vector2(41, 162.24745)
+
+[node name="Barrel10" type="Marker2D" parent="." unique_id=1715875852]
+position = Vector2(113, 162.53317)
+rotation = -0.2617994
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2016373049]
+material = SubResource("ShaderMaterial_ef2m6")
+texture = ExtResource("5_x0ygs")
+
+[node name="EnemyLayer" type="Area2D" parent="." unique_id=1750372824]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyLayer" unique_id=1442405135]
+shape = SubResource("CircleShape2D_tx0hn")
+
+[node name="HurtBoxComponent" parent="." unique_id=299202839 node_paths=PackedStringArray("healthcomponent", "health_progress_bar_component", "sprite") instance=ExtResource("6_se6uy")]
+healthcomponent = NodePath("../Health_Component")
+health_progress_bar_component = NodePath("../Health_Progress_Bar_Component")
+sprite = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent" unique_id=2130143032]
+shape = SubResource("CircleShape2D_1f0kj")
+
+[node name="HitBoxComponent" parent="." unique_id=1214335948 instance=ExtResource("7_es5ma")]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" unique_id=1909118214]
+shape = SubResource("CircleShape2D_ewcyi")
+
+[node name="Timer" type="Timer" parent="." unique_id=1336208119]
+wait_time = 0.6
+autostart = true
+
+[node name="Health_Progress_Bar_Component" parent="." unique_id=597678260 node_paths=PackedStringArray("health_component") instance=ExtResource("7_wxx0s")]
+position = Vector2(0, -184.04907)
+scale = Vector2(2.4, 2.4)
+health_component = NodePath("../Health_Component")
+
+[node name="Right_RayCast" type="RayCast2D" parent="." unique_id=942653287]
+position = Vector2(-114, 2)
+exclude_parent = false
+target_position = Vector2(-56, 0)
+collision_mask = 512
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Left_RayCast" type="RayCast2D" parent="." unique_id=1889841106]
+position = Vector2(113, 2)
+exclude_parent = false
+target_position = Vector2(54, 0)
+collision_mask = 512
+collide_with_areas = true
+collide_with_bodies = false

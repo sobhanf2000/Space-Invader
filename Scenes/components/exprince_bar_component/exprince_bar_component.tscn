@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://wls2n34eehuf"]
+
+[ext_resource type="Script" uid="uid://dnn030gbcchsv" path="res://Scenes/components/exprince_bar_component/exprince_bar_component.gd" id="1_xp6qe"]
+
+[node name="Exprince_Bar_component" type="Node2D" unique_id=1901138205 node_paths=PackedStringArray("progress_bar")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xp6qe")
+progress_bar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1600972129]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -12.0
+offset_right = 90.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 35.0
+show_percentage = false

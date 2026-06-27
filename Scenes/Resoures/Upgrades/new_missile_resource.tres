@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Upgrade_Weapon" format=3 uid="uid://br7646ego6y5g"]
+
+[sub_resource type="GDScript" id="GDScript_yl0tu"]
+script/source = "class_name Upgrade_Weapon
+extends Resource
+
+
+@export var id: String = \"\"
+
+@export var title: String = \"\"
+@export var description: String = \"\"
+
+@export var unlock_weapon: String = \"\"
+
+@export var damage_bonus: int = 0
+@export var fire_rate_bonus: float = 0.0
+@export var bullet_count_bonus: int = 0
+"
+
+[resource]
+script = SubResource("GDScript_yl0tu")
+id = "new_missile"
+title = "New Missile"
+description = "Add new Missle"

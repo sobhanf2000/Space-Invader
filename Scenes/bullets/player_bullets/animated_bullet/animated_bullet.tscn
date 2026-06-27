@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bm5s4ucxf8qk2"]
+
+[ext_resource type="Script" uid="uid://cqhsk5po0yn71" path="res://Scenes/bullets/player_bullets/bullet/bullet.gd" id="1_475kh"]
+[ext_resource type="Texture2D" uid="uid://djbtmx7ewj0g8" path="res://Assets/PNGs/bullets/Fire_Bullet_Pixel.png" id="2_u5qum"]
+[ext_resource type="PackedScene" uid="uid://bua5q7c327oj" path="res://Scenes/components/hit_box_component/hit_box_component.tscn" id="3_0vs37"]
+[ext_resource type="PackedScene" uid="uid://guogcam4nkjo" path="res://Scenes/bullets/player_bullets/bullet_particles/bullet_particles.tscn" id="4_ei85c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yaxal"]
+atlas = ExtResource("2_u5qum")
+region = Rect2(255, 130, 17, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t31yj"]
+atlas = ExtResource("2_u5qum")
+region = Rect2(272, 130, 17, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bxrg"]
+atlas = ExtResource("2_u5qum")
+region = Rect2(289, 130, 17, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6iao"]
+atlas = ExtResource("2_u5qum")
+region = Rect2(306, 130, 17, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3owqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yaxal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t31yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bxrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6iao")
+}],
+"loop": 1,
+"name": &"Basic_bullet",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjght"]
+size = Vector2(2, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aybke"]
+size = Vector2(1.5, 5.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oduel"]
+size = Vector2(2, 6)
+
+[node name="Animated_Bullet" type="StaticBody2D" unique_id=145672786]
+scale = Vector2(4, 4)
+script = ExtResource("1_475kh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=10303486]
+modulate = Color(0, 18.892157, 0, 1)
+position = Vector2(0.02149107, -0.25)
+rotation = -1.5707964
+scale = Vector2(0.28441176, 0.23984477)
+sprite_frames = SubResource("SpriteFrames_3owqy")
+animation = &"Basic_bullet"
+autoplay = "Basic_bullet"
+frame_progress = 0.86664397
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=353947498]
+scale = Vector2(0.665, 0.82)
+shape = SubResource("RectangleShape2D_xjght")
+disabled = true
+
+[node name="Enemy_Detector" type="Area2D" parent="." unique_id=1093689919]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Detector" unique_id=1475739325]
+shape = SubResource("RectangleShape2D_aybke")
+
+[node name="HitBoxComponent" parent="." unique_id=1214335948 instance=ExtResource("3_0vs37")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" unique_id=580834483]
+scale = Vector2(0.73, 1)
+shape = SubResource("RectangleShape2D_oduel")
+
+[node name="Bullet_Particles" parent="." unique_id=2003337689 instance=ExtResource("4_ei85c")]

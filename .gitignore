@@ -1,0 +1,14 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+# خروجی‌ها
+*.apk
+*.exe
+
+# ویدیو و فایل‌های سنگین
+*.ogv
+*.mp4
+
+
+# فایل‌های موقت
+*.tmp

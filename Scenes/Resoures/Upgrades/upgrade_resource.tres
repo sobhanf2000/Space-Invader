@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://cmlqmnoj1j3ph"]
+
+[ext_resource type="Script" uid="uid://jfhe13mosrh" path="res://Scenes/Resoures/Upgrades/upgrade_Weapons.gd" id="1_uvh57"]
+
+[resource]
+script = ExtResource("1_uvh57")

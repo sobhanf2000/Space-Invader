@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bstwo2f46tl6g"]
+
+[ext_resource type="Script" uid="uid://ckl183ffypgu2" path="res://Scenes/UIs/score_canvas_layer/score_canvas_layer.gd" id="1_5j1kh"]
+
+[node name="Score_CanvasLayer" type="CanvasLayer" unique_id=831675315]
+script = ExtResource("1_5j1kh")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=717706162]
+offset_left = 380.0
+offset_top = 11.0
+offset_right = 496.0
+offset_bottom = 70.0
+pivot_offset = Vector2(86, 42)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.09411765, 0.69411767, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="High_Score_Label" type="Label" parent="." unique_id=703437135]
+offset_left = 379.0
+offset_top = 73.0
+offset_right = 495.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(1, 0.3137255, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "HI-Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Wave_Label" type="Label" parent="." unique_id=1170796234]
+visible = false
+offset_left = 432.0
+offset_top = 73.0
+offset_right = 532.0
+offset_bottom = 101.0
+pivot_offset = Vector2(86, 42)
+theme_override_colors/font_color = Color(2.055, 0.47068626, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Difficulty_Label" type="Label" parent="." unique_id=1715794906]
+visible = false
+offset_left = 418.0
+offset_top = 119.0
+offset_right = 539.0
+offset_bottom = 156.0
+pivot_offset = Vector2(86, 42)
+theme_override_colors/font_color = Color(2.055, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1

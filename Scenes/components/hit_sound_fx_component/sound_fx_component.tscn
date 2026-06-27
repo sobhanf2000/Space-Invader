@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bi2y7tsy12uf3"]
+
+[ext_resource type="Script" uid="uid://vidhat4ctu47" path="res://Scenes/components/hit_sound_fx_component/sound_fx_component.gd" id="1_4mt71"]
+
+[node name="SoundFX_Component" type="AudioStreamPlayer" unique_id=768436461 node_paths=PackedStringArray("end_timer")]
+bus = &"SFX"
+script = ExtResource("1_4mt71")
+end_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="." unique_id=405307322]
+wait_time = 4.0
+one_shot = true
+autostart = true

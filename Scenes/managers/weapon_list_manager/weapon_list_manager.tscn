@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c7dl2x73xlcpq"]
+
+[ext_resource type="Script" uid="uid://dypq8dwyp71jn" path="res://Scenes/managers/weapon_list_manager/weapon_list_manager.gd" id="1_5so4c"]
+
+[node name="Weapon_List_Manager" type="Node" unique_id=713176015]
+script = ExtResource("1_5so4c")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cge0h6w1dou0g"]
+
+[ext_resource type="PackedScene" uid="uid://sql1p53u27wg" path="res://Scenes/game_objects/main/main.tscn" id="1_k6udr"]
+
+[node name="EndLess_Level" type="Node" unique_id=190182720]
+
+[node name="Main" parent="." unique_id=1580180735 instance=ExtResource("1_k6udr")]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bjdc0hobnpb0"]
+
+[ext_resource type="Script" uid="uid://c22kjpwvsn8r8" path="res://Scenes/components/health_drop_component/health_drop_component.gd" id="1_2yggj"]
+[ext_resource type="PackedScene" uid="uid://dxfppskh4ygm3" path="res://Scenes/game_objects/health_tool/health_tool.tscn" id="2_s6ehi"]
+
+[node name="Health_Drop_Component" type="Node" unique_id=851080663]
+script = ExtResource("1_2yggj")
+drop_rate = 0.4
+health_tool_origin = ExtResource("2_s6ehi")

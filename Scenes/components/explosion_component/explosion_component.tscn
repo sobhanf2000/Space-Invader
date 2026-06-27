@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://capyrat1m60cb"]
+
+[ext_resource type="Script" uid="uid://bd2efx1prptyq" path="res://Scenes/components/explosion_component/explosion_component.gd" id="1_phm67"]
+
+[node name="Explosion_Component" type="Node" unique_id=832396287]
+script = ExtResource("1_phm67")

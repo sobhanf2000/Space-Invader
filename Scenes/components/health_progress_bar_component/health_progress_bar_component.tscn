@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dibay4tlc1hyx"]
+
+[ext_resource type="Script" uid="uid://gxjffbt3dd74" path="res://Scenes/components/health_progress_bar_component/health_progress_bar_component.gd" id="1_6ht2j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ht2j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ht2j"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 4.8672786, 0, 0.7294118)
+
+[node name="Health_Progress_Bar_Component" type="Node2D" unique_id=597678260 node_paths=PackedStringArray("progress_bar")]
+script = ExtResource("1_6ht2j")
+progress_bar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1515135850]
+offset_left = -46.0
+offset_top = -6.0
+offset_right = 46.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_6ht2j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6ht2j")
+max_value = 1.0
+value = 0.35
+show_percentage = false

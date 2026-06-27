@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bcl8iod0a6aha"]
+
+[ext_resource type="Script" uid="uid://ccdex1loob8iy" path="res://Scenes/UIs/upgrade_screen_ui/upgrade_screen_ui.gd" id="1_1amlx"]
+[ext_resource type="PackedScene" uid="uid://cd4uk5q3amoao" path="res://Scenes/UIs/upgrade_card_ui/upgrade_card_ui.tscn" id="2_p3ybx"]
+
+[node name="upgrade_screen_ui" type="CanvasLayer" unique_id=2090450461 node_paths=PackedStringArray("card_container")]
+script = ExtResource("1_1amlx")
+upgrade_card_ui_origin = ExtResource("2_p3ybx")
+card_container = NodePath("MarginContainer/Card_Container")
+
+[node name="Label" type="Label" parent="." unique_id=1413229182]
+offset_left = 102.0
+offset_top = 200.0
+offset_right = 441.0
+offset_bottom = 239.0
+theme_override_font_sizes/font_size = 32
+text = "Level UP : Upgrade Time"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=795533436]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Card_Container" type="HBoxContainer" parent="MarginContainer" unique_id=1693918559]
+layout_mode = 2
+mouse_filter = 2

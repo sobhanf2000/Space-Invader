@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dk5uaacixlxb2"]
+
+[ext_resource type="Script" uid="uid://beye2i8esmttq" path="res://Scenes/bullets/player_bullets/missile_bullet/missile_controller/missile_controller.gd" id="1_f4ycn"]
+[ext_resource type="PackedScene" uid="uid://nnkcpsamqcbx" path="res://Scenes/bullets/player_bullets/missile_bullet/missile_bullet.tscn" id="2_6uyh0"]
+
+[node name="Missile_Controller" type="Node" unique_id=786107975]
+script = ExtResource("1_f4ycn")
+missile_origin = ExtResource("2_6uyh0")

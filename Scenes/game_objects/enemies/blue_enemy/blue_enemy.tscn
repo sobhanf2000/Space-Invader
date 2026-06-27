@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://p2fj0sp0rp8f"]
+
+[ext_resource type="Script" uid="uid://jk0p1jfouia8" path="res://Scenes/game_objects/enemies/enemy/enemy.gd" id="1_kr0kk"]
+[ext_resource type="PackedScene" uid="uid://b5xk7d3cvjrns" path="res://Scenes/components/health_component/health_component.tscn" id="2_y1jnc"]
+[ext_resource type="PackedScene" uid="uid://cd0l8mnxgps26" path="res://Scenes/components/fire_controller_v2_component/fire_controller_v2_component.tscn" id="3_cgfs1"]
+[ext_resource type="PackedScene" uid="uid://cx4gluaaqfsrk" path="res://Scenes/bullets/enemy_bullets/blue_enemy_bullet/blue_enemy_bullet.tscn" id="4_kr0kk"]
+[ext_resource type="Texture2D" uid="uid://btmoc3bpfllyj" path="res://Assets/PNGs/enemies/cute-blue-space-invader-monster-game-enemy-pixel-art-style-white-cute-blue-space-invader-monster-game-enemy-pixel-art-199809541-removebg-preview.png" id="6_hbbay"]
+[ext_resource type="PackedScene" uid="uid://nfmt6urqq7i5" path="res://Scenes/components/HurtBoxComponent/hurt_box_component.tscn" id="7_5a3x7"]
+[ext_resource type="PackedScene" uid="uid://bua5q7c327oj" path="res://Scenes/components/hit_box_component/hit_box_component.tscn" id="7_kr0kk"]
+[ext_resource type="PackedScene" uid="uid://dibay4tlc1hyx" path="res://Scenes/components/health_progress_bar_component/health_progress_bar_component.tscn" id="8_w68eq"]
+
+[sub_resource type="Shader" id="Shader_cgfs1"]
+code = "shader_type canvas_item;
+
+uniform float hit_flash : hint_range(0.0, 1.0) = 0.0;
+uniform vec4 flash_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
+
+void fragment() {
+    vec4 tex = texture(TEXTURE, UV);
+
+    vec3 final_color = mix(tex.rgb, flash_color.rgb, hit_flash);
+
+    COLOR = vec4(final_color, tex.a);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kr0kk"]
+resource_local_to_scene = true
+shader = SubResource("Shader_cgfs1")
+shader_parameter/hit_flash = 0.0
+shader_parameter/flash_color = Color(0, 0.49019608, 1, 0.6313726)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tx0hn"]
+radius = 164.40022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
+radius = 176.30708
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1jnc"]
+radius = 176.30708
+
+[node name="Blue_Enemy" type="Node2D" unique_id=499079467 node_paths=PackedStringArray("health_component", "health_progress_bar_component") groups=["enemy"]]
+scale = Vector2(0.14, 0.163)
+script = ExtResource("1_kr0kk")
+health_component = NodePath("Health_Component")
+health_progress_bar_component = NodePath("Health_Progress_Bar_Component")
+
+[node name="Health_Component" parent="." unique_id=770925081 instance=ExtResource("2_y1jnc")]
+health = 24
+
+[node name="Fire_Controller_v2_Component" parent="." unique_id=899284589 node_paths=PackedStringArray("barrel") instance=ExtResource("3_cgfs1")]
+bullet_origin = ExtResource("4_kr0kk")
+random_shoot_cooldowns = Vector2(70, 100)
+barrel = [NodePath("../Barrel"), NodePath("../Barrel2"), NodePath("../Barrel3")]
+is_active = true
+fire_types = 1
+
+[node name="Health_Progress_Bar_Component" parent="." unique_id=597678260 node_paths=PackedStringArray("health_component") instance=ExtResource("8_w68eq")]
+position = Vector2(0, -184.04907)
+scale = Vector2(2.4, 2.4)
+health_component = NodePath("../Health_Component")
+
+[node name="Barrel" type="Marker2D" parent="." unique_id=1400295908]
+position = Vector2(0, 134)
+
+[node name="Barrel2" type="Marker2D" parent="." unique_id=994300580]
+position = Vector2(107.143, 134)
+rotation = -0.7853982
+
+[node name="Barrel3" type="Marker2D" parent="." unique_id=677890263]
+position = Vector2(-107.143, 134)
+rotation = 0.7853982
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2016373049]
+material = SubResource("ShaderMaterial_kr0kk")
+texture = ExtResource("6_hbbay")
+
+[node name="EnemyLayer" type="Area2D" parent="." unique_id=1750372824]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyLayer" unique_id=1442405135]
+shape = SubResource("CircleShape2D_tx0hn")
+
+[node name="HurtBoxComponent" parent="." unique_id=299202839 node_paths=PackedStringArray("healthcomponent", "health_progress_bar_component", "sprite") instance=ExtResource("7_5a3x7")]
+healthcomponent = NodePath("../Health_Component")
+health_progress_bar_component = NodePath("../Health_Progress_Bar_Component")
+sprite = NodePath("../Sprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent" unique_id=2130143032]
+shape = SubResource("CircleShape2D_1f0kj")
+
+[node name="HitBoxComponent" parent="." unique_id=1214335948 instance=ExtResource("7_kr0kk")]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" unique_id=936587728]
+shape = SubResource("CircleShape2D_y1jnc")
+
+[node name="Timer" type="Timer" parent="." unique_id=1336208119]
+wait_time = 0.75
+autostart = true

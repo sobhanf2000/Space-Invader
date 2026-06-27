@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b72ghsiw8s7np"]
+
+[ext_resource type="Script" uid="uid://bl0cmxx0cqia5" path="res://Scenes/managers/weve_manager/weve_manager.gd" id="1_42tfj"]
+
+[node name="Weve_Manager" type="Node" unique_id=1301526804]
+script = ExtResource("1_42tfj")

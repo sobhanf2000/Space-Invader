@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cd4uk5q3amoao"]
+
+[ext_resource type="Script" uid="uid://d221rgwoiyuov" path="res://Scenes/UIs/upgrade_card_ui/upgrade_card_ui.gd" id="1_u2dhj"]
+
+[node name="upgrade_card_ui" type="PanelContainer" unique_id=1080547272]
+process_mode = 3
+custom_minimum_size = Vector2(120, 150)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -75.0
+offset_right = 60.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(60, 75)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+script = ExtResource("1_u2dhj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=69615198]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=2014338753]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LevelLabel" type="Label" parent="VBoxContainer" unique_id=1875286053]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=812625020]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://guogcam4nkjo"]
+
+[ext_resource type="Script" uid="uid://bds5qynw2wjs8" path="res://Scenes/bullets/player_bullets/bullet_particles/bullet_particles.gd" id="1_201e5"]
+
+[node name="Bullet_Particles" type="CPUParticles2D" unique_id=2003337689]
+modulate = Color(2.4508178, 1.9168459, 0, 1)
+emitting = false
+amount = 12
+lifetime = 0.8
+one_shot = true
+speed_scale = 0.8
+explosiveness = 0.6
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, 1)
+spread = 60.0
+gravity = Vector2(0, 120)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+script = ExtResource("1_201e5")
+
+[node name="Timer" type="Timer" parent="." unique_id=532162300]
+wait_time = 5.0
+one_shot = true
+autostart = true

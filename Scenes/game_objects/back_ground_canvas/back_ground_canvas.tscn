@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bmw84xt2iiirr"]
+
+[ext_resource type="Script" uid="uid://byifmqog8fuck" path="res://Scenes/game_objects/back_ground_canvas/back_ground_canvas.gd" id="1_uws6r"]
+[ext_resource type="Texture2D" uid="uid://4b8b4lbxmpxa" path="res://Assets/PNGs/BackGrounds/Starfield_05-1024x1024.png" id="2_rprty"]
+
+[node name="BackGround_canvas" type="CanvasLayer" unique_id=2050967396]
+script = ExtResource("1_uws6r")
+
+[node name="back1" type="Sprite2D" parent="." unique_id=419795185]
+position = Vector2(591.6, 1694)
+scale = Vector2(4, 4)
+texture = ExtResource("2_rprty")
+
+[node name="back2" type="Sprite2D" parent="." unique_id=979130272]
+position = Vector2(591.6, -143.00006)
+scale = Vector2(4, 4)
+texture = ExtResource("2_rprty")

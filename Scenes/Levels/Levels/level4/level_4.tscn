@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bdc0b64v76j2k"]
+
+[ext_resource type="Script" uid="uid://c1ggpohu0fp2p" path="res://Scenes/game_objects/main/main.gd" id="1_3gche"]
+[ext_resource type="PackedScene" uid="uid://c2p25vlybsu3f" path="res://Scenes/UIs/end_game_ui/end_game_ui.tscn" id="2_thwth"]
+[ext_resource type="PackedScene" uid="uid://bmw84xt2iiirr" path="res://Scenes/game_objects/back_ground_canvas/back_ground_canvas.tscn" id="3_6ju0q"]
+[ext_resource type="PackedScene" uid="uid://bsn3jjs5wmfxg" path="res://Scenes/UIs/pause_ui/pause_ui.tscn" id="3_vj734"]
+[ext_resource type="PackedScene" uid="uid://c518ptu2ac3fj" path="res://Scenes/UIs/experince_bar/experince_bar.tscn" id="4_vj734"]
+[ext_resource type="PackedScene" uid="uid://b6oc8pm33idyw" path="res://Scenes/components/vial_drop_component/vial_drop_component.tscn" id="5_mqkkn"]
+[ext_resource type="PackedScene" uid="uid://bjdc0hobnpb0" path="res://Scenes/components/health_drop_component/health_drop_component.tscn" id="6_d1cco"]
+[ext_resource type="PackedScene" uid="uid://dldejtutq6wkm" path="res://Scenes/managers/experince_manager/experince_manager.tscn" id="7_a83kx"]
+[ext_resource type="Script" uid="uid://cu8jubt12dpt" path="res://Scenes/managers/upgrade_manager/upgrade_manager.gd" id="8_gge3q"]
+[ext_resource type="PackedScene" uid="uid://dk5uaacixlxb2" path="res://Scenes/bullets/player_bullets/missile_bullet/missile_controller/missile_controller.tscn" id="9_bq3no"]
+[ext_resource type="PackedScene" uid="uid://bcl8iod0a6aha" path="res://Scenes/UIs/upgrade_screen_ui/upgrade_screen_ui.tscn" id="10_3bvxg"]
+[ext_resource type="PackedScene" uid="uid://c7dl2x73xlcpq" path="res://Scenes/managers/weapon_list_manager/weapon_list_manager.tscn" id="11_hv36p"]
+[ext_resource type="PackedScene" uid="uid://58un3qjtfoge" path="res://Scenes/components/level_spawner_component/level_spawner_component.tscn" id="12_qih8p"]
+[ext_resource type="PackedScene" uid="uid://cxn87hsd44cc5" path="res://Scenes/game_objects/planets/planets.tscn" id="13_gn3ht"]
+[ext_resource type="PackedScene" uid="uid://mn5kfd382m4g" path="res://Scenes/game_objects/enemies/enemy/enemy.tscn" id="14_pjfd0"]
+[ext_resource type="PackedScene" uid="uid://dg3f3yf2icm3t" path="res://Scenes/game_objects/enemies/purple_enemy/purple_enemy.tscn" id="15_rk3r6"]
+[ext_resource type="PackedScene" uid="uid://p2fj0sp0rp8f" path="res://Scenes/game_objects/enemies/blue_enemy/blue_enemy.tscn" id="16_jyw7x"]
+[ext_resource type="PackedScene" uid="uid://11w3acrrc7w8" path="res://Scenes/enemy_path_follow_2d.tscn" id="17_0r2m2"]
+[ext_resource type="PackedScene" uid="uid://canepyxhrr8tq" path="res://Scenes/game_objects/enemies/red_enemy/red_enemy.tscn" id="17_thwth"]
+[ext_resource type="PackedScene" uid="uid://dqlmjemkhhn22" path="res://Scenes/game_objects/enemies/bosses/red_enemy_boss/red_enemy_boss.tscn" id="18_xqu1j"]
+[ext_resource type="PackedScene" uid="uid://djvke1vht7g2l" path="res://Scenes/game_objects/space_ship/space_ship.tscn" id="19_ds7km"]
+[ext_resource type="Script" uid="uid://coqy25voka6ds" path="res://Scripts/world_bottom_area.gd" id="20_wt156"]
+[ext_resource type="PackedScene" uid="uid://capyrat1m60cb" path="res://Scenes/components/explosion_component/explosion_component.tscn" id="21_mqkkn"]
+[ext_resource type="AudioStream" uid="uid://dxwegyso74sdo" path="res://Assets/SFXs/musics/787932__edwardszakal__retro-game-music.wav" id="21_w00hg"]
+[ext_resource type="AudioStream" uid="uid://c7r8pbm3ueqt4" path="res://Assets/SFXs/gameover/818672__hotpin7__8-bit-explosion-arp.wav" id="22_44ln0"]
+[ext_resource type="PackedScene" uid="uid://q87stp2fqlxs" path="res://Scenes/animated_sprite/explosion_animated_sprite/explosion_animated_sprite.tscn" id="22_d1cco"]
+[ext_resource type="PackedScene" uid="uid://ds6cnatnjrnty" path="res://Scenes/enemy_path.tscn" id="23_h5yrs"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6bp64"]
+distance = -44.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thwth"]
+size = Vector2(8.5, 560.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ju0q"]
+size = Vector2(7, 618)
+
+[node name="Level_4" type="Node2D" unique_id=1580180735]
+script = ExtResource("1_3gche")
+end_game_ui_origin = ExtResource("2_thwth")
+
+[node name="Pause_UI" parent="." unique_id=1156188564 instance=ExtResource("3_vj734")]
+
+[node name="BackGround_canvas" parent="." unique_id=2050967396 instance=ExtResource("3_6ju0q")]
+layer = -1
+
+[node name="Experince_Bar" parent="." unique_id=704974273 instance=ExtResource("4_vj734")]
+
+[node name="Vial_drop_Component" parent="." unique_id=1109720898 instance=ExtResource("5_mqkkn")]
+drop_rate = 0.2
+
+[node name="Health_Drop_Component" parent="." unique_id=851080663 instance=ExtResource("6_d1cco")]
+drop_rate = 0.1
+
+[node name="Experince_Manager" parent="." unique_id=626210457 groups=["exprince_manager"] instance=ExtResource("7_a83kx")]
+
+[node name="Upgrade_Manager" parent="." unique_id=158091872 node_paths=PackedStringArray("weapons_list_manager") instance=ExtResource("7_a83kx")]
+script = ExtResource("8_gge3q")
+missile_controller = ExtResource("9_bq3no")
+upgrade_screen_ui = ExtResource("10_3bvxg")
+weapons_list_manager = NodePath("../Weapon_List_Manager")
+
+[node name="Weapon_List_Manager" parent="." unique_id=713176015 instance=ExtResource("11_hv36p")]
+missile_controller_origin = ExtResource("9_bq3no")
+
+[node name="Level_Spawner_Component" parent="." unique_id=2047793396 node_paths=PackedStringArray("endless_respawn_timer", "enemy_path", "boss_position_marker") instance=ExtResource("12_qih8p")]
+endless_respawn_timer = NodePath("../Endless_Respawn_Timer")
+planets_origin = ExtResource("13_gn3ht")
+all_type_enemy_origins = Array[PackedScene]([ExtResource("14_pjfd0"), ExtResource("15_rk3r6"), ExtResource("16_jyw7x"), ExtResource("17_thwth")])
+enemy_path_follow = ExtResource("17_0r2m2")
+enemy_path = NodePath("../EnemyPath")
+wave_numbers = 5
+base_enemy_numbers = 100
+boss_origin = ExtResource("18_xqu1j")
+boss_position_marker = NodePath("../Boss_Position_Marker")
+
+[node name="Explosion_Component" parent="." unique_id=832396287 instance=ExtResource("21_mqkkn")]
+explosion_sprites_origin = ExtResource("22_d1cco")
+
+[node name="SpaceShip" parent="." unique_id=1257194046 instance=ExtResource("19_ds7km")]
+position = Vector2(264, 1263)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=452214335]
+position = Vector2(85, 290)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("20_wt156")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1854389295]
+position = Vector2(14, 697)
+shape = SubResource("WorldBoundaryShape2D_6bp64")
+
+[node name="BackGround_AS" type="AudioStreamPlayer2D" parent="." unique_id=1025559508]
+stream = ExtResource("21_w00hg")
+autoplay = true
+
+[node name="EndGame_AS" type="AudioStreamPlayer2D" parent="." unique_id=1054462138]
+stream = ExtResource("22_44ln0")
+
+[node name="Endless_Respawn_Timer" type="Timer" parent="." unique_id=2046866181]
+wait_time = 0.8
+autostart = true
+
+[node name="GameEntities" type="Node2D" parent="." unique_id=658986241 groups=["game_entities"]]
+
+[node name="EnemyPath" parent="." unique_id=1812763889 instance=ExtResource("23_h5yrs")]
+position = Vector2(34.000015, 10.000001)
+
+[node name="Boss_Position_Marker" type="Marker2D" parent="." unique_id=69412945]
+position = Vector2(264, -208)
+
+[node name="Left_Wall_Area2d" type="Area2D" parent="." unique_id=886556354]
+position = Vector2(1, 0)
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Wall_Area2d" unique_id=221092279]
+position = Vector2(-1.25, 269.75)
+shape = SubResource("RectangleShape2D_thwth")
+
+[node name="Right_Wall_Area2d" type="Area2D" parent="." unique_id=566649785]
+position = Vector2(173, 0)
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Wall_Area2d" unique_id=1672963924]
+position = Vector2(0, 290)
+shape = SubResource("RectangleShape2D_6ju0q")

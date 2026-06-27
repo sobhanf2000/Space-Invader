@@ -1,0 +1,25 @@
+[gd_resource type="Theme" format=3 uid="uid://dt4hys0kv7m0b"]
+
+[ext_resource type="FontFile" uid="uid://c675vkck3goh2" path="res://Assets/fonts/RobotikaPixelGreek-nAWJR.otf" id="1_l61c2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l61c2"]
+bg_color = Color(0.3647059, 0.3647059, 0.3647059, 1)
+border_width_left = 8
+border_width_right = 8
+border_color = Color(0.58431375, 0.58431375, 0.58431375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p4o1"]
+bg_color = Color(0, 0.90588236, 0.88235295, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l61c2"]
+
+[resource]
+default_font = ExtResource("1_l61c2")
+Button/colors/font_color = Color(0, 1, 0.88235295, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_l61c2")
+Label/colors/font_color = Color(0, 1, 0.88235295, 1)
+Label/font_sizes/font_size = 24
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_l61c2")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_0p4o1")
+pause_button/base_type = &"Button"
+pause_button/styles/normal = SubResource("StyleBoxEmpty_l61c2")

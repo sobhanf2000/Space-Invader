@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://58un3qjtfoge"]
+
+[ext_resource type="Script" uid="uid://cjt3s4yhc6thu" path="res://Scenes/components/level_spawner_component/level_spawner_component.gd" id="1_dtptu"]
+[ext_resource type="PackedScene" uid="uid://cdllmqo8uebs8" path="res://Scenes/UIs/wave_show_ui/wave_show_ui.tscn" id="2_cs6l7"]
+
+[node name="Level_Spawner_Component" type="Node" unique_id=2047793396]
+script = ExtResource("1_dtptu")
+next_wave_show_ui_origin = ExtResource("2_cs6l7")

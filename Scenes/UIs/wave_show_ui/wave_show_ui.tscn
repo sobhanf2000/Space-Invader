@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cdllmqo8uebs8"]
+
+[ext_resource type="Script" uid="uid://cgiqyub6hvf7f" path="res://Scenes/UIs/wave_show_ui/wave_show_ui.gd" id="1_ae680"]
+
+[node name="Wave_Show_UI" type="CanvasLayer" unique_id=1547378136]
+script = ExtResource("1_ae680")
+
+[node name="WaveLabel" type="Label" parent="." unique_id=105377867]
+offset_top = -141.0
+offset_right = 540.0
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 90
+text = "Next Wave"
+horizontal_alignment = 1
+vertical_alignment = 1

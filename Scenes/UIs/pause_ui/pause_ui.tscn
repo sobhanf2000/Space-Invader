@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bsn3jjs5wmfxg"]
+
+[ext_resource type="Script" uid="uid://drj0dty7jiel7" path="res://Scenes/UIs/pause_ui/pause_ui.gd" id="1_pr6w7"]
+[ext_resource type="Texture2D" uid="uid://bchpyr3bdchtm" path="res://Assets/PNGs/UI/Pause/190521.png" id="2_ru61j"]
+[ext_resource type="Script" uid="uid://d4ijwp104k3bf" path="res://Scenes/UIs/pause_ui/pause_menu.gd" id="3_n8wfe"]
+
+[node name="Pause_UI" type="CanvasLayer" unique_id=1156188564]
+process_mode = 3
+script = ExtResource("1_pr6w7")
+
+[node name="Pause_Button" type="Button" parent="." unique_id=1652510179]
+offset_right = 51.0
+offset_bottom = 51.0
+theme_type_variation = &"pause_button"
+icon = ExtResource("2_ru61j")
+expand_icon = true
+
+[node name="Pause_Menu" type="CanvasLayer" parent="." unique_id=1403748166]
+process_mode = 3
+visible = false
+script = ExtResource("3_n8wfe")
+
+[node name="PauseLabel" type="Label" parent="Pause_Menu" unique_id=84439533]
+offset_top = 216.0
+offset_right = 539.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(8.384999, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Pause Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume_Button" type="Button" parent="Pause_Menu" unique_id=728651601]
+offset_left = 64.0
+offset_top = 375.0
+offset_right = 464.0
+offset_bottom = 495.0
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back_To_Menu_Button" type="Button" parent="Pause_Menu" unique_id=63280377]
+offset_left = 64.0
+offset_top = 522.0
+offset_right = 464.0
+offset_bottom = 642.0
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Restart_Button" type="Button" parent="Pause_Menu" unique_id=683424682]
+offset_left = 64.0
+offset_top = 671.0
+offset_right = 464.0
+offset_bottom = 791.0
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit_Button" type="Button" parent="Pause_Menu" unique_id=755891013]
+offset_left = 64.0
+offset_top = 834.0
+offset_right = 464.0
+offset_bottom = 954.0
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+metadata/_edit_use_anchors_ = true

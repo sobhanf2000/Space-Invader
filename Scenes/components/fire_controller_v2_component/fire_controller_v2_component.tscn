@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cd0l8mnxgps26"]
+
+[ext_resource type="Script" uid="uid://dwdq72pmva6lw" path="res://Scenes/components/fire_controller_v2_component/fire_controller_v2_component.gd" id="1_2t1h4"]
+
+[node name="Fire_Controller_v2_Component" type="Node" unique_id=899284589]
+script = ExtResource("1_2t1h4")

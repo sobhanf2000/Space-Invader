@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ctlbn4c021r8j"]
+
+[ext_resource type="Script" uid="uid://12v0oqk41o7t" path="res://Scenes/bullets/enemy_bullets/enemy_bullet/enemy_bullet.gd" id="1_54jiv"]
+[ext_resource type="Texture2D" uid="uid://ci6ormyifd1oi" path="res://Assets/icon.svg" id="2_b6yqb"]
+[ext_resource type="PackedScene" uid="uid://bua5q7c327oj" path="res://Scenes/components/hit_box_component/hit_box_component.tscn" id="3_4g8ly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54jiv"]
+size = Vector2(3, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6yqb"]
+size = Vector2(6, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g8ly"]
+size = Vector2(6, 14)
+
+[node name="Enemy_Bullet" type="StaticBody2D" unique_id=1321475363]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_54jiv")
+metadata/_edit_horizontal_guides_ = [-1113.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=638801322]
+modulate = Color(12.351948, 0, 0, 1)
+scale = Vector2(0.04, 0.13)
+texture = ExtResource("2_b6yqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=146257472]
+shape = SubResource("RectangleShape2D_54jiv")
+disabled = true
+
+[node name="HitBoxComponent" parent="." unique_id=1214335948 instance=ExtResource("3_4g8ly")]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" unique_id=1637380430]
+shape = SubResource("RectangleShape2D_b6yqb")
+
+[node name="Enemy_Detector" type="Area2D" parent="." unique_id=1443560815]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Detector" unique_id=693650833]
+shape = SubResource("RectangleShape2D_4g8ly")
+
+[node name="Timer" type="Timer" parent="." unique_id=1400494133]
+wait_time = 5.0
+autostart = true

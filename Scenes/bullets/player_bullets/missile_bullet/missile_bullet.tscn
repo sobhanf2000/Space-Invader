@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://nnkcpsamqcbx"]
+
+[ext_resource type="Texture2D" uid="uid://ctmfxandxgvkp" path="res://Assets/PNGs/Weapons/rocket/rocket.png" id="1_tyjee"]
+[ext_resource type="Script" uid="uid://dw3400m8lgg0c" path="res://Scenes/bullets/player_bullets/missile_bullet/missile_bullet.gd" id="2_6buso"]
+[ext_resource type="PackedScene" uid="uid://bi2y7tsy12uf3" path="res://Scenes/components/hit_sound_fx_component/sound_fx_component.tscn" id="3_2gmep"]
+[ext_resource type="PackedScene" uid="uid://bua5q7c327oj" path="res://Scenes/components/hit_box_component/hit_box_component.tscn" id="3_umfxq"]
+[ext_resource type="AudioStream" uid="uid://tslogmkp03cb" path="res://Assets/SFXs/Missile/Launch/Missile_launch.mp3" id="4_txyao"]
+[ext_resource type="AudioStream" uid="uid://daejmchk31stm" path="res://Assets/SFXs/Missile/Explosion/Missile_explosion.mp3" id="6_2gmep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txyao"]
+size = Vector2(600, 1200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltwlt"]
+size = Vector2(600, 1100)
+
+[node name="Rocket_Bullet" type="Sprite2D" unique_id=780985732]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_tyjee")
+script = ExtResource("2_6buso")
+
+[node name="SoundFX_Component" parent="." unique_id=768436461 instance=ExtResource("3_2gmep")]
+stream = ExtResource("6_2gmep")
+volume_db = -10.0
+
+[node name="MissileLayer" type="Area2D" parent="." unique_id=2098802106]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MissileLayer" unique_id=1380394400]
+position = Vector2(-100, 100)
+shape = SubResource("RectangleShape2D_txyao")
+
+[node name="HitBoxComponent" parent="." unique_id=1214335948 instance=ExtResource("3_umfxq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent" unique_id=1074162169]
+position = Vector2(-100, 150)
+shape = SubResource("RectangleShape2D_ltwlt")
+
+[node name="Missile_Launch_AS" type="AudioStreamPlayer" parent="." unique_id=774541705]
+stream = ExtResource("4_txyao")
+volume_db = -12.0
+bus = &"SFX"
