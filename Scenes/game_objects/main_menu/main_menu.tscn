@@ -14,6 +14,15 @@ autoplay = true
 expand = true
 loop = true
 
+[node name="SupportMe_Button" type="Button" parent="VideoStreamPlayer" unique_id=2130595837]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 780.0
+offset_right = 365.0
+offset_bottom = 865.0
+theme_override_font_sizes/font_size = 32
+text = "Support Me"
+
 [node name="Main_Menu_list" type="CanvasLayer" parent="." unique_id=1819815492]
 
 [node name="GameTitle_Label" type="Label" parent="Main_Menu_list" unique_id=1705308629]

@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func on_win_game():
-	await get_tree().create_timer(7).timeout
+	await get_tree().create_timer(6).timeout
 	var end_game_ui_instance = end_game_ui_origin.instantiate()
 	add_child(end_game_ui_instance)
 	end_game_ui_instance.end_game_label.text = "Won Game"

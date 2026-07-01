@@ -69,8 +69,8 @@ planets_origin = ExtResource("12_auwu3")
 all_type_enemy_origins = Array[PackedScene]([ExtResource("13_l15g1"), ExtResource("15_xnkuy")])
 enemy_path_follow = ExtResource("14_u7mgy")
 enemy_path = NodePath("../EnemyPath")
-wave_numbers = 2
-base_enemy_numbers = 1
+wave_numbers = 5
+base_enemy_numbers = 2
 boss_origin = ExtResource("15_1cdqi")
 boss_position_marker = NodePath("../Boss_Position_Marker")
 

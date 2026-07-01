@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var play_level_button_5: Button = $Level_Menu/Play_Level_Button_5
 @onready var play_level_button_6: Button = $Level_Menu/Play_Level_Button_6
 @onready var back_to_main_button: Button = $Level_Menu/Back_To_Main_Button
+@onready var support_me_button: Button = $VideoStreamPlayer/SupportMe_Button
 
 @onready var main_menu_list: CanvasLayer = $Main_Menu_list
 @onready var level_menu: CanvasLayer = $Level_Menu
@@ -24,10 +25,10 @@ func _ready() -> void:
 	play_level_button_2.pressed.connect(on_play_level_pressed.bind(2))
 	play_level_button_3.pressed.connect(on_play_level_pressed.bind(3))
 	play_level_button_4.pressed.connect(on_play_level_pressed.bind(4))
-
 	
 	back_to_main_button.pressed.connect(on_back_to_main_pressed)
 	
+	support_me_button.pressed.connect(on_support_me_button)
 	
 func on_play_pressed():
 	level_menu.visible = true
@@ -59,3 +60,7 @@ func on_back_to_main_pressed():
 
 func on_play_infinity_pressed():
 	get_tree().change_scene_to_file("res://Scenes/game_objects/main/main.tscn")
+
+
+func on_support_me_button():
+	OS.shell_open("https://reymit.ir/sobhanfattahi")

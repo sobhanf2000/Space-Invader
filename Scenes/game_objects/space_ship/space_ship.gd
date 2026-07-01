@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		#)
 
 	global_position.x = clamp(global_position.x , 0 , viewport_size.x)
-	global_position.y = clamp(global_position.y , 0 , viewport_size.y)
+	global_position.y = clamp(global_position.y , -100 , viewport_size.y)
 		
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
@@ -59,10 +59,11 @@ func _input(event):
 			
 	#else:
 		#global_rotation= move_toward(global_rotation , 0 , 0.02)
-			#
+
+
 func on_win_game():
 	var end_position = global_position.y - 5000
 	await get_tree().create_timer(4).timeout
 	sound_fx_component.play_sfx()
 	var tween = get_tree().create_tween()
-	tween.tween_property(self , "global_position" , Vector2(global_position.x , end_position) , 6.2)
+	tween.tween_property(self , "global_position" , Vector2(global_position.x , end_position) , 5.5)

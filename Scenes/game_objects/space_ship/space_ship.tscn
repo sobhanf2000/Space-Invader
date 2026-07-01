@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bi2y7tsy12uf3" path="res://Scenes/components/hit_sound_fx_component/sound_fx_component.tscn" id="5_7ueqb"]
 [ext_resource type="AudioStream" uid="uid://4ngweaiuk4eg" path="res://Assets/SFXs/spaceship/intro/Space_Intro.mp3" id="6_wdgx3"]
 [ext_resource type="Shader" uid="uid://dwbgwy4ep8otm" path="res://Scenes/Resoures/shaders/damage/enemy.gdshader" id="7_5kfyq"]
-[ext_resource type="AudioStream" uid="uid://cdio8yjhtceff" path="res://Assets/SFXs/fireeffect/edited__gemmellness__fire.wav" id="7_pu3uw"]
 [ext_resource type="PackedScene" uid="uid://dibay4tlc1hyx" path="res://Scenes/components/health_progress_bar_component/health_progress_bar_component.tscn" id="8_edfme"]
 [ext_resource type="AudioStream" uid="uid://cl05ln4dapjaa" path="res://Assets/SFXs/healup/heal-up.mp3" id="8_ysxly"]
 [ext_resource type="AudioStream" uid="uid://krenqi5nih0k" path="res://Assets/SFXs/experience/mixkit-retro-game-notification-212.wav" id="9_fr0jw"]
 [ext_resource type="PackedScene" uid="uid://nfmt6urqq7i5" path="res://Scenes/components/HurtBoxComponent/hurt_box_component.tscn" id="9_qeg8w"]
 [ext_resource type="PackedScene" uid="uid://wls2n34eehuf" path="res://Scenes/components/exprince_bar_component/exprince_bar_component.tscn" id="10_mwak0"]
+[ext_resource type="AudioStream" uid="uid://vhcdsy7y2wri" path="res://Assets/SFXs/Laser/Laser_SFX (3).wav" id="13_00gaf"]
 [ext_resource type="AudioStream" uid="uid://bs7jen88o8vsp" path="res://Assets/SFXs/spaceship/engine/725828__clif_creates__basic-spaceship-engine-bass.wav" id="15_l8klr"]
 [ext_resource type="PackedScene" uid="uid://cwv8uufimlfxl" path="res://Scenes/Particles/exhaust_particle/exhaust_particle.tscn" id="17_00gaf"]
 
@@ -84,8 +84,7 @@ shape = SubResource("RectangleShape2D_njdtb")
 stream = ExtResource("8_ysxly")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1462710350]
-stream = ExtResource("7_pu3uw")
-volume_db = -10.0
+stream = ExtResource("13_00gaf")
 bus = &"SFX"
 
 [node name="Health_Progress_Bar_Component" parent="." unique_id=597678260 node_paths=PackedStringArray("health_component") instance=ExtResource("8_edfme")]

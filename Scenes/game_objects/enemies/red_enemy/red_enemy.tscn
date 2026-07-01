@@ -45,7 +45,7 @@ health_component = NodePath("Health_Component")
 health_progress_bar_component = NodePath("Health_Progress_Bar_Component")
 
 [node name="Health_Component" parent="." unique_id=770925081 instance=ExtResource("2_0rolu")]
-health = 30
+health = 27
 
 [node name="Fire_Controller_v2_Component" parent="." unique_id=899284589 node_paths=PackedStringArray("barrel") instance=ExtResource("3_n5y5s")]
 bullet_origin = ExtResource("4_mhwaf")

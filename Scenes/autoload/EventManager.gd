@@ -16,12 +16,12 @@ var boss_added: bool = false
 func enemies_count(enemies: int , enemy_pos: Vector2):
 	if enemies < 0:
 		enemy_died_emit(enemy_pos)
-	enemy_count += enemies
 	if enemy_count < 0:
 		enemy_count = 0
+	enemy_count += enemies
 	if enemy_count  <= 0 and !endless and check_last_wave and boss_added:
 		win_game_emit()
-	#print("enemy: " + str(enemy_count))
+	print("enemy: " + str(enemy_count))
 
 
 func game_over_emit():

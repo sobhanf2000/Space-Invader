@@ -83,6 +83,7 @@ func start_new_wave(current_wave: int):
 		boss_scene_instance.global_position = boss_position_marker.global_position
 		game_entities.add_child(boss_scene_instance)
 		EventManager.enemies_count(1 , boss_scene_instance.global_position)
+		EventManager.enemy_count = 1
 		EventManager.check_last_wave = true
 		EventManager.boss_added = true
 

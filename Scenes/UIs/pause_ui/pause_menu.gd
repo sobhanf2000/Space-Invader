@@ -21,12 +21,14 @@ func on_resume_button_clicked():
 
 func on_restart_button_clicked():
 	Engine.time_scale = 1
-	get_tree().paused = true
+	get_tree().paused = false
+	EventManager.enemy_count = 0
 	get_tree().reload_current_scene()
 
 
 func on_back_to_menu_button_clicked():
 	Engine.time_scale = 1
+	EventManager.enemy_count = 0
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/game_objects/main_menu/main_menu.tscn")
 
