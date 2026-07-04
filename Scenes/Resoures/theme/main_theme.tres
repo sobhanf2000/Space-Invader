@@ -1,46 +1,54 @@
 [gd_resource type="Theme" format=3 uid="uid://dt4hys0kv7m0b"]
 
-[ext_resource type="FontFile" uid="uid://di6vdmtatmoc5" path="res://Assets/fonts/thick-snow/Thick Snow.ttf" id="1_0p4o1"]
 [ext_resource type="FontFile" uid="uid://c675vkck3goh2" path="res://Assets/fonts/RobotikaPixelGreek-nAWJR.otf" id="1_l61c2"]
+[ext_resource type="FontFile" uid="uid://dkjydgapeq1ic" path="res://Assets/fonts/Oxanium/static/Oxanium-Medium.ttf" id="1_wxfcx"]
+[ext_resource type="Texture2D" uid="uid://cq8t1lpc7pkq" path="res://Assets/PNGs/UI/MainMenu/Empty_btn_bg.png" id="2_wxfcx"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4p8a"]
-bg_color = Color(0.0074116, 1.8049032e-08, 0.14971796, 1)
-border_width_left = 8
-border_width_right = 8
-border_color = Color(1.2032688e-08, 1.2032687e-07, 0.26795483, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbe1c"]
+texture = ExtResource("2_wxfcx")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l61c2"]
-bg_color = Color(0.0074116, 1.8049032e-08, 0.14971796, 1)
-border_width_left = 8
-border_width_right = 8
-border_color = Color(0.0017188574, 0.12020471, 0.25919902, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxfcx"]
+texture = ExtResource("2_wxfcx")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etm6k"]
-bg_color = Color(0.0074116, 1.8049032e-08, 0.14971796, 1)
-border_width_left = 8
-border_width_right = 8
-border_color = Color(0.0017188574, 0.12020471, 0.25919902, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wdyp"]
+texture = ExtResource("2_wxfcx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b76m6"]
+texture = ExtResource("2_wxfcx")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p4o1"]
 bg_color = Color(0, 0.90588236, 0.88235295, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wdyp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxfcx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d5x4k"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l61c2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4ydq"]
 
 [resource]
 default_font = ExtResource("1_l61c2")
-Button/colors/font_color = Color(0, 1, 0.88235295, 1)
-Button/colors/font_focus_color = Color(0, 1, 0.88235295, 1)
-Button/colors/font_hover_color = Color(0, 1, 0.88235295, 1)
-Button/colors/font_hover_pressed_color = Color(0, 1, 0.88235295, 1)
-Button/colors/font_pressed_color = Color(0, 1, 0.88235295, 1)
-Button/fonts/font = ExtResource("1_0p4o1")
-Button/styles/hover = SubResource("StyleBoxFlat_i4p8a")
-Button/styles/normal = SubResource("StyleBoxFlat_l61c2")
-Button/styles/pressed = SubResource("StyleBoxFlat_etm6k")
-Label/colors/font_color = Color(0, 1, 0.88235295, 1)
-Label/font_sizes/font_size = 24
-Label/fonts/font = ExtResource("1_0p4o1")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_l61c2")
+Button/colors/font_color = Color(0, 2.212, 2.454, 1)
+Button/colors/font_focus_color = Color(0.47843137, 0.72156864, 0.88235295, 1)
+Button/colors/font_hover_color = Color(0.47843137, 0.72156864, 0.88235295, 1)
+Button/colors/font_hover_pressed_color = Color(0.47843137, 0.72156864, 0.88235295, 1)
+Button/colors/font_pressed_color = Color(0.47843137, 0.72156864, 0.88235295, 1)
+Button/fonts/font = ExtResource("1_wxfcx")
+Button/styles/hover = SubResource("StyleBoxTexture_kbe1c")
+Button/styles/normal = SubResource("StyleBoxTexture_wxfcx")
+Button/styles/pressed = SubResource("StyleBoxTexture_2wdyp")
+Label/colors/font_color = Color(0, 2.2117221, 2.454227, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_wxfcx")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_b76m6")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_0p4o1")
+main_button/base_type = &"Button"
+main_button/styles/normal = SubResource("StyleBoxEmpty_2wdyp")
+main_button/styles/pressed = SubResource("StyleBoxEmpty_wxfcx")
 pause_button/base_type = &"Button"
+pause_button/styles/hover = SubResource("StyleBoxEmpty_d5x4k")
 pause_button/styles/normal = SubResource("StyleBoxEmpty_l61c2")
+pause_button/styles/pressed = SubResource("StyleBoxEmpty_o4ydq")

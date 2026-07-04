@@ -11,6 +11,7 @@ var shoot_cooldown = 0
 
 var damage
 
+
 func _ready() -> void:
 	EventManager.upgrade_weapon.connect(on_upgrade_weapon)
 	damage = 3
@@ -18,7 +19,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	shoot_cooldown += 10 * delta
-
+	
 	#if Input.is_action_pressed("shoot") and shoot_cooldown > 2:
 	if shoot_cooldown > 2:
 		var bullet_instance = bullet_origin.instantiate() as Bullet

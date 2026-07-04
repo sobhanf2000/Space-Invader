@@ -1,120 +1,149 @@
 [gd_scene format=3 uid="uid://dyv8esvi6sey7"]
 
 [ext_resource type="Script" uid="uid://b6wkijh5ux6x1" path="res://Scenes/game_objects/main_menu/main_menu.gd" id="1_28flt"]
-[ext_resource type="VideoStream" uid="uid://dofxrokc0lljj" path="res://moviefile/test.ogv" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://dv2rpxqe4jwqp" path="res://Assets/PNGs/UI/MainMenu/bg.png" id="2_buer5"]
+[ext_resource type="Texture2D" uid="uid://bftt0p162nt75" path="res://Assets/PNGs/UI/MainMenu/SI_Title.png" id="3_kbe1c"]
+[ext_resource type="Texture2D" uid="uid://bf7up8fbd815l" path="res://Assets/PNGs/UI/MainMenu/Startbtn.png" id="4_smpwf"]
+[ext_resource type="Texture2D" uid="uid://k6fyirwlytw3" path="res://Assets/PNGs/UI/MainMenu/Exitbtn.png" id="5_q3ckw"]
+[ext_resource type="Texture2D" uid="uid://c8glni1afhmoy" path="res://Assets/PNGs/UI/MainMenu/support.png" id="6_q6vtq"]
+[ext_resource type="Texture2D" uid="uid://cq8t1lpc7pkq" path="res://Assets/PNGs/UI/MainMenu/Empty_btn_bg.png" id="7_kbe1c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnj76"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o4s0i"]
+texture = ExtResource("4_smpwf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smpwf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbe1c"]
+texture = ExtResource("5_q3ckw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6vtq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q3ckw"]
+texture = ExtResource("6_q6vtq")
 
 [node name="Main_Menu" type="CanvasLayer" unique_id=1526870895]
 script = ExtResource("1_28flt")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=466509835]
-offset_right = 540.0
-offset_bottom = 1200.0
-stream = ExtResource("2_48xlc")
-autoplay = true
-expand = true
-loop = true
+[node name="BackGround" type="Sprite2D" parent="." unique_id=226694677]
+position = Vector2(271.5, 579.5)
+scale = Vector2(0.6715542, 0.8035134)
+texture = ExtResource("2_buer5")
 
-[node name="SupportMe_Button" type="Button" parent="VideoStreamPlayer" unique_id=2130595837]
-layout_mode = 0
-offset_left = 147.0
-offset_top = 780.0
-offset_right = 365.0
-offset_bottom = 865.0
-theme_override_font_sizes/font_size = 32
-text = "Support Me"
+[node name="SiTitle" type="Sprite2D" parent="." unique_id=477312469]
+position = Vector2(272.99994, 223)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_kbe1c")
 
 [node name="Main_Menu_list" type="CanvasLayer" parent="." unique_id=1819815492]
 
-[node name="GameTitle_Label" type="Label" parent="Main_Menu_list" unique_id=1705308629]
-offset_left = 79.0
-offset_top = 180.0
-offset_right = 449.0
-offset_bottom = 377.0
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "Space Invader"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Play_Button" type="Button" parent="Main_Menu_list" unique_id=1453742451]
-offset_left = 147.0
-offset_top = 545.0
-offset_right = 365.0
-offset_bottom = 630.0
+offset_left = 80.0
+offset_top = 457.0
+offset_right = 460.0
+offset_bottom = 577.0
+theme_type_variation = &"main_button"
 theme_override_font_sizes/font_size = 32
-text = "Start"
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wnj76")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o4s0i")
+icon = ExtResource("4_smpwf")
+expand_icon = true
 
 [node name="Exit_Button" type="Button" parent="Main_Menu_list" unique_id=762658918]
-offset_left = 147.0
-offset_top = 670.0
-offset_right = 365.0
-offset_bottom = 755.0
+offset_left = 80.0
+offset_top = 606.0
+offset_right = 460.0
+offset_bottom = 726.0
+theme_type_variation = &"main_button"
 theme_override_font_sizes/font_size = 32
-text = "Exit"
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_smpwf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kbe1c")
+icon = ExtResource("5_q3ckw")
+expand_icon = true
+
+[node name="SupportMe_Button" type="Button" parent="Main_Menu_list" unique_id=2130595837]
+offset_left = 80.0
+offset_top = 747.0
+offset_right = 460.0
+offset_bottom = 867.0
+theme_type_variation = &"main_button"
+theme_override_font_sizes/font_size = 32
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_q6vtq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q3ckw")
+icon = ExtResource("6_q6vtq")
+expand_icon = true
 
 [node name="Level_Menu" type="CanvasLayer" parent="." unique_id=1817155857]
 visible = false
 
-[node name="GameTitle_Label" type="Label" parent="Level_Menu" unique_id=2079142884]
-offset_left = 79.0
-offset_top = 180.0
-offset_right = 449.0
-offset_bottom = 377.0
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "Space Invader"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Play_Infinity_Button" type="Button" parent="Level_Menu" unique_id=1069589326]
-offset_left = 151.0
-offset_top = 340.0
-offset_right = 369.0
-offset_bottom = 425.0
+offset_left = 154.0
+offset_top = 423.0
+offset_right = 381.0
+offset_bottom = 481.0
 theme_override_font_sizes/font_size = 32
-text = "Infinity"
+text = "Endless"
+icon = ExtResource("7_kbe1c")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Play_Level_Button_1" type="Button" parent="Level_Menu" unique_id=1431295095]
-offset_left = 13.0
-offset_top = 471.0
-offset_right = 231.0
-offset_bottom = 556.0
+offset_left = 6.0
+offset_top = 526.0
+offset_right = 233.0
+offset_bottom = 581.0
 theme_override_font_sizes/font_size = 32
-text = "Level 1"
+text = "mission 1"
+icon = ExtResource("7_kbe1c")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Play_Level_Button_2" type="Button" parent="Level_Menu" unique_id=2028804449]
-offset_left = 311.0
-offset_top = 471.0
-offset_right = 529.0
-offset_bottom = 556.0
+offset_left = 320.0
+offset_top = 527.0
+offset_right = 538.0
+offset_bottom = 583.0
 theme_override_font_sizes/font_size = 32
-text = "Level 2"
+text = "Mission 2"
+icon = ExtResource("7_kbe1c")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Play_Level_Button_3" type="Button" parent="Level_Menu" unique_id=1325327908]
-offset_left = 13.0
-offset_top = 600.0
-offset_right = 231.0
-offset_bottom = 685.0
+offset_left = 11.0
+offset_top = 646.0
+offset_right = 229.0
+offset_bottom = 706.0
 theme_override_font_sizes/font_size = 32
-text = "Level 3"
+text = "Mission 3"
+icon = ExtResource("7_kbe1c")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Play_Level_Button_4" type="Button" parent="Level_Menu" unique_id=1055708221]
-offset_left = 311.0
-offset_top = 600.0
-offset_right = 529.0
-offset_bottom = 685.0
+offset_left = 318.0
+offset_top = 647.0
+offset_right = 536.0
+offset_bottom = 707.0
 theme_override_font_sizes/font_size = 32
-text = "Level 4"
+text = "Mission 4"
+icon = ExtResource("7_kbe1c")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Back_To_Main_Button" type="Button" parent="Level_Menu" unique_id=1766610730]
-offset_left = 147.0
-offset_top = 745.0
-offset_right = 365.0
-offset_bottom = 830.0
+offset_left = 120.0
+offset_top = 737.0
+offset_right = 428.0
+offset_bottom = 813.0
 theme_override_font_sizes/font_size = 32
 text = "Back"
+icon = ExtResource("7_kbe1c")
+icon_alignment = 1
 
 [node name="Version_Label" type="Label" parent="." unique_id=215834506]
+visible = false
 offset_right = 138.0
 offset_bottom = 46.0
 text = "Version: 0.7 Beta"

@@ -1,7 +1,14 @@
 extends CanvasLayer
 
+
+# Main menu list
+@onready var main_menu_list: CanvasLayer = $Main_Menu_list
 @onready var play_button: Button = $Main_Menu_list/Play_Button
 @onready var exit_button: Button = $Main_Menu_list/Exit_Button
+@onready var support_me_button: Button = $Main_Menu_list/SupportMe_Button
+
+# Level selection list
+@onready var level_menu: CanvasLayer = $Level_Menu
 @onready var play_infinity_button: Button = $Level_Menu/Play_Infinity_Button
 @onready var play_level_button_1: Button = $Level_Menu/Play_Level_Button_1
 @onready var play_level_button_2: Button = $Level_Menu/Play_Level_Button_2
@@ -10,10 +17,7 @@ extends CanvasLayer
 @onready var play_level_button_5: Button = $Level_Menu/Play_Level_Button_5
 @onready var play_level_button_6: Button = $Level_Menu/Play_Level_Button_6
 @onready var back_to_main_button: Button = $Level_Menu/Back_To_Main_Button
-@onready var support_me_button: Button = $VideoStreamPlayer/SupportMe_Button
 
-@onready var main_menu_list: CanvasLayer = $Main_Menu_list
-@onready var level_menu: CanvasLayer = $Level_Menu
 
 
 func _ready() -> void:

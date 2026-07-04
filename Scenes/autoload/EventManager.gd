@@ -13,6 +13,7 @@ var endless
 var check_last_wave: bool = false
 var boss_added: bool = false
 
+
 func enemies_count(enemies: int , enemy_pos: Vector2):
 	if enemies < 0:
 		enemy_died_emit(enemy_pos)

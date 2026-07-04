@@ -25,9 +25,11 @@ func update_labels(weapon_details: Dictionary):
 	else:
 		description_label.text = str(weapon_details["description"])
 		
-	Engine.time_scale = 0.2
+	Engine.time_scale = 0
+	get_tree().paused = true
 
 func _on_gui_input_clicked(event:InputEvent):
 	if event.is_action_pressed("left_click"):
 		Engine.time_scale = 1
+		get_tree().paused = false
 		selected.emit()

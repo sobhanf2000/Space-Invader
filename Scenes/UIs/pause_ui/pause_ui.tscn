@@ -12,6 +12,9 @@ script = ExtResource("1_pr6w7")
 offset_right = 51.0
 offset_bottom = 51.0
 theme_type_variation = &"pause_button"
+theme_override_colors/icon_normal_color = Color(0, 0, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0.6745098, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0.41568628, 1)
 icon = ExtResource("2_ru61j")
 expand_icon = true
 
