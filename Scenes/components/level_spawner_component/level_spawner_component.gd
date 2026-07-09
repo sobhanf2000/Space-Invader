@@ -1,5 +1,7 @@
 extends Node
 
+#Level_Spawner_Component script
+
 
 @export var endless_respawn_timer: Timer 
 @export var planets_origin: PackedScene
@@ -29,8 +31,8 @@ func _ready() -> void:
 
 
 func enemy_instantiate():
-	enemy_numbers -= 1
 	if enemy_numbers > 0:
+		enemy_numbers -= 1
 		var enemy_path_follow_instance = enemy_path_follow.instantiate() 
 		enemy_path.add_child(enemy_path_follow_instance)
 		var enemy_instance = all_type_enemy_origins.pick_random().instantiate() as Node2D
@@ -39,8 +41,7 @@ func enemy_instantiate():
 		EventManager.enemies_count(1 , enemy_instance.global_position)
 		enemy_path_follow_instance.add_child(enemy_instance)
 	
-	
-	if EventManager.enemy_count <= 0 and !EventManager.check_last_wave:
+	if  enemy_numbers <= 0 and EventManager.enemy_count <= 0 and !EventManager.check_last_wave :
 		next_wave()
 	
 	#EventManager.enemies_count(1 ,Vector2.ZERO)

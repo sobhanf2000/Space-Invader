@@ -1,5 +1,8 @@
 extends Node
 
+#EventManager script (autoload)
+
+
 signal game_over
 signal win_game
 signal enemy_died(enemy_pos)

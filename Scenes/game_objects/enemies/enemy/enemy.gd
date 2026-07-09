@@ -1,5 +1,7 @@
 extends Node2D
 
+#enemy script
+
 @export var health_component: HealthComponent
 @export var health_progress_bar_component: Health_Progress_Bar_Component 
 @onready var timer: Timer = $Timer
