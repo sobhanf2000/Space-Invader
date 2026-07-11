@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+#main menu script
 
 # Main menu list
 @onready var main_menu_list: CanvasLayer = $Main_Menu_list
@@ -68,3 +69,11 @@ func on_play_infinity_pressed():
 
 func on_support_me_button():
 	OS.shell_open("https://reymit.ir/sobhanfattahi")
+
+
+func update_level_buttons():
+	var unlocked_level = Savemanager.data["unlocked_level"]
+	play_level_button_1.disabled = unlocked_level < 1
+	play_level_button_2.disabled = unlocked_level < 2
+	play_level_button_3.disabled = unlocked_level < 3
+	play_level_button_4.disabled = unlocked_level < 4

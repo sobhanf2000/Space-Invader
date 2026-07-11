@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+
+#end game script
+
 @onready var restart_button: Button = $Restart_Button
 @onready var exit_button: Button = $Exit_Button
 @onready var end_game_label: Label = $EndGameLabel

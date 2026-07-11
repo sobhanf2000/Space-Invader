@@ -13,7 +13,7 @@ config_version=5
 config/name="space invaders"
 run/main_scene="uid://dyv8esvi6sey7"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://Assets/icon.svg"
+config/icon="uid://bc3lkrv2jai1t"
 
 [audio]
 
@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://dpqqqjam6vo38"
 [autoload]
 
 EventManager="*uid://1jno4xidi33y"
+Savemanager="*uid://bern3pqqf5b5a"
 
 [display]
 

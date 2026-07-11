@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ohd8qb75yw1o" path="res://Assets/PNGs/sprite_sheets/explosion 3.png" id="1_1fgap"]
 [ext_resource type="Texture2D" uid="uid://ch6b27bheg3il" path="res://Assets/PNGs/sprite_sheets/explosion 1.png" id="2_itgjh"]
 [ext_resource type="Script" uid="uid://it52r4q1uqy2" path="res://Scenes/animated_sprite/explosion_animated_sprite/explosion_animated_sprite.gd" id="2_x5bip"]
+[ext_resource type="AudioStream" uid="uid://b6m27sv5ikd7n" path="res://Assets/SFXs/explosion/sci-fi-explosion.mp3" id="4_jaqjw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5bip"]
 atlas = ExtResource("1_1fgap")
@@ -911,3 +912,6 @@ scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_3owqy")
 animation = &"explosion2"
 script = ExtResource("2_x5bip")
+
+[node name="Explosion_SFX" type="AudioStreamPlayer" parent="." unique_id=233962767]
+stream = ExtResource("4_jaqjw")
